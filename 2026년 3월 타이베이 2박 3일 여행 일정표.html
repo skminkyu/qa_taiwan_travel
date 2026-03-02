@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이베이 여행 일정표 🇹🇼 (2026.3.13-3.15)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --tw-red: #fe0000;
+        --tw-blue: #00247d;
+        --tw-white: #ffffff;
+        --bg-start: #e0f7fa;
+        --bg-end: #b3e5fc;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+        color: #333;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      /* Sticky Header */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-bottom: 4px solid var(--tw-red);
+        text-align: center;
+        backdrop-filter: blur(5px);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: var(--tw-blue);
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 5px;
+        font-weight: 500;
+      }
+
+      .welcome-msg {
+        font-size: 0.9rem;
+        color: var(--tw-blue);
+        margin-top: 8px;
+        font-style: italic;
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 15px 40px 15px;
+      }
+
+      /* Card Layout */
+      .card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid var(--tw-blue);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card h2 {
+        margin-top: 0;
+        color: var(--tw-blue);
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .card h3 {
+        color: #444;
+        font-size: 1.1rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-left: 4px solid var(--tw-red);
+        padding-left: 10px;
+      }
+
+      /* Timeline Items */
+      .timeline-item {
+        margin-bottom: 25px;
+        padding-left: 15px;
+        border-left: 3px solid #eee;
+        position: relative;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        top: 6px;
+        width: 13px;
+        height: 13px;
+        background: var(--tw-blue);
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+
+      .time {
+        display: inline-block;
+        background: var(--tw-red);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .activity {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #2c3e50;
+      }
+
+      .desc {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 8px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .desc ul {
+        margin: 5px 0;
+        padding-left: 20px;
+      }
+
+      /* Special Info Box */
+      .info-box {
+        background-color: #e3f2fd;
+        border-left: 5px solid #2196f3;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+        box-shadow: 0 2px 5px rgba(33, 150, 243, 0.1);
+      }
+
+      .info-box h4 {
+        margin: 0 0 10px 0;
+        color: #1565c0;
+        display: flex;
+        align-items: center;
+      }
+
+      .warning-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-size: 0.95rem;
+        color: #e65100;
+      }
+
+      .check-box {
+        background-color: #e8f5e9;
+        border-left: 5px solid #4caf50;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+      }
+
+      .check-box h3 {
+        color: #2e7d32;
+        margin-top: 0;
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .check-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .check-list li {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+      }
+
+      /* Map Button */
+      .btn-map {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--tw-blue);
+        color: white;
+        text-decoration: none;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        transition: all 0.2s;
+        margin-top: 8px;
+        box-shadow: 0 2px 5px rgba(0, 36, 125, 0.3);
+      }
+
+      .btn-map:hover {
+        background-color: var(--tw-red);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(254, 0, 0, 0.3);
+      }
+
+      .btn-map::before {
+        content: '📍';
+        margin-right: 5px;
+      }
+
+      /* Reference List */
+      .ref-section h3 {
+        color: var(--tw-red);
+        margin-bottom: 15px;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 5px;
+      }
+
+      .ref-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+        margin-bottom: 25px;
+      }
+
+      .ref-list li {
+        background: #f9f9f9;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid #eee;
+        transition: all 0.2s;
+      }
+
+      .ref-list li:hover {
+        background: #fff;
+        border-color: var(--tw-blue);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .ref-list a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        font-weight: 500;
+      }
+
+      .ref-list a:hover {
+        color: var(--tw-blue);
+      }
+
+      /* Tips Section */
+      .tips {
+        background: #fff8e1;
+        color: #333;
+        padding: 25px;
+        border-radius: 15px;
+        margin-top: 30px;
+        border: 2px solid #ffecb3;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.15);
+      }
+
+      .tips h3 {
+        color: #f57f17;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+      }
+
+      .tips p {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px dashed #ffe082;
+      }
+
+      .tips p:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      /* Option Box */
+      .option-box {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 10px;
+        background: #fff;
+      }
+
+      .option-title {
+        font-weight: bold;
+        color: var(--tw-blue);
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .ref-list,
+        .check-list {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 1.2rem;
+        }
+
+        .card {
+          padding: 15px;
+        }
+      }
+    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Open%20Sans:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Google%20Sans:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto%20Sans%20JP:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;display=swap" rel="stylesheet"></head>
+  <body style="">
+    <header>
+      <h1>타이베이 여행 일정표 🇹🇼</h1>
+      <div class="subtitle">2026.3.13 (금) - 3.15 (일)</div>
+      <div class="welcome-msg">
+        ♬ 석가 투어에 오신 여러분 환영합니다. '아시아의 심장' 중화민국으로 여러분을 친절히 모시겠습니다 ♬
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Preparation Check -->
+      <div class="check-box">
+        <h3>📋 개별 준비사항 (일정 시작 전 확인!)</h3>
+        <ul class="check-list">
+          <li>✅ 입국신고서 미리 작성</li>
+          <li>✅ 로밍, 돼지코 준비</li>
+          <li>✅ 여권 유효기간 확인</li>
+          <li>✅ 개인비용 환전 (카드, 현금)</li>
+          <li>✅ 여행자 보험 가입 확인</li>
+        </ul>
+      </div>
+
+      <!-- Day 1 -->
+      <div class="card">
+        <h2>📅 3월 13일 (금) - 도착의 날</h2>
+
+        <h3>출발 및 도착</h3>
+
+        <div class="timeline-item">
+          <span class="time">08:20</span>
+          <div class="activity">🛫 인천공항(T1) 집결</div>
+          <div class="desc">
+            • <strong>라운지 이용자:</strong> 팀장님, 효신M, 주민M, 석호M, 민규M → 카운터(08:00)<br>
+            • <strong>게이트 직행:</strong> 연진M, 새라M → 게이트(11:00)
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">11:40</span>
+          <div class="activity">✈️ BR169 탑승</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">13:30</span>
+          <div class="activity">🛬 타오위안 공항(T2) 도착</div>
+
+          <div class="info-box">
+            <h4>💳 타오위안 공항 도착 후 할일 (중요!)</h4>
+            <div>✅ <strong>이지카드(悠遊卡, EasyCard)</strong> 구매 또는 사전구매 후 수령</div>
+            <div>✅ <strong>이지카드 충전:</strong> 각 <strong>1,000 NTD</strong></div>
+            <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.95rem; color: #444">
+              <li>구매가격: 100 NTD</li>
+              <li>충전금: 900 NTD</li>
+              <li><strong>총액: 1,000 NTD</strong> 준비</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">14:30</span>
+          <div class="activity">🚇 MRT Express 탑승</div>
+          <div class="desc">
+            <strong>📍 소요시간 안내:</strong><br>
+            • <strong>직행열차:</strong> 약 35분 소요<br>
+            • <strong>올스톱 열차:</strong> 약 50분 소요<br>
+            • 타이페이역 하차 후 숙소까지 MRT 환승 이동
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">15:30</span>
+          <div class="activity">🏨 숙소 도착 및 신변 정리</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">16:00</span>
+          <div class="activity">🧋 행복당(幸福堂) - 버블티 / monga 지파이</div>
+          <a href="https://maps.app.goo.gl/2jaHzFdC9FhD1z166" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">17:30</span>
+          <div class="activity">🍲 God Guo Hot Pot (尬鍋 西門店)</div>
+          <div class="desc">저녁식사 (예약완료✓)</div>
+          <a href="https://maps.app.goo.gl/VsJY8s8dfy7Kk4kW9" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">19:00</span>
+          <div class="activity">🏯 용산사(龍山寺) 탐방</div>
+          <a href="https://maps.app.goo.gl/56VjJ6aAP6Qu59h39" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">20:00</span>
+          <div class="activity">🚶 시먼거리 산책 &amp; 서문홍루 이동</div>
+          <div class="desc">소화 겸 산책 및 도보 이동</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">21:00</span>
+          <div class="activity">🍺 서문홍루 근처 Bar (2차)</div>
+          <div class="desc">노상 Bar에서 타이완 비어와 함께</div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="card" style="border-top-color: var(--tw-red)">
+        <h2>📅 3월 14일 (토) - 스펀 투어 &amp; 야시장 데이</h2>
+
+        <div class="timeline-item">
+          <span class="time">08:00</span>
+          <div class="activity">🥐 麥香堡早餐店 - 아침식사</div>
+          <div class="desc">조식당 이용</div>
+          <a href="https://maps.app.goo.gl/9ocuvkbjmXLndHdK9" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">09:00</span>
+          <div class="activity">🚂 스펀(十分) 투어 시작 (기차)</div>
+          <div class="desc">
+            <strong>📌 갈 때:</strong><br>
+            • 타이페이역 → 루이팡역 (쯔창 쾌속선 기차)<br>
+            • 루이팡역 → 스펀 (핑시선 환승)<br><br>
+            <strong>📌 올 때:</strong><br>
+            • 스펀에서 복귀 시 기차시간표 감안하여 <strong>핑시선 or 택시</strong>로 루이팡까지 이동 (유동적)
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">10:30</span>
+          <div class="activity">🎆 스펀 도착 - 천등날리기 체험</div>
+          <div class="desc">
+            • 🍗 닭날개 볶음밥<br>
+            • 🥜 땅콩 아이스크림<br>
+            • 🌭 소시지
+          </div>
+          <a href="https://maps.app.goo.gl/Xuumqwisx19G4zoZ6" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">13:30</span>
+          <div class="activity">🥟 점심식사 (옵션 선택)</div>
+
+          <div class="warning-box">
+            ⚠️ <strong>중요:</strong> 점심에 1안 식당을 선택하면 저녁도 1안, 2안을 선택하면 저녁도 2안 이용
+          </div>
+
+          <div class="option-box">
+            <span class="option-title">[1안] KiKi餐廳 ATT 4 FUN信義店 (예약완료✓)</span>
+            <a href="https://maps.app.goo.gl/U2B5qdssmBcak2N59" target="_blank" class="btn-map">구글맵 보기</a>
+          </div>
+          <div class="option-box">
+            <span class="option-title">[2안] Karen 철판구이</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">15:00</span>
+          <div class="activity">🍍 微熱山丘 (써니힐) - 펑리수 구매</div>
+          <div class="desc">타이베이 101 쇼핑센터점</div>
+          <a href="https://maps.app.goo.gl/PVKuiRSeDPtVWehr6" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">16:30</span>
+          <div class="activity">🏨 숙소 복귀 &amp; 환복</div>
+          <div class="desc">짐 가볍게 한 후, 편안한 복장으로 환복</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">17:30</span>
+          <div class="activity">🍽️ 저녁식사 (옵션 선택)</div>
+          <div class="desc">※ 점심과 동일한 옵션(1안 or 2안) 이용</div>
+
+          <div class="option-box">
+            <span class="option-title">[1안] 根萊鐵板燒 (근래철판구이)</span>
+            <a href="https://maps.app.goo.gl/qTALV3P4x34nAffw5" target="_blank" class="btn-map">구글맵 보기</a>
+          </div>
+          <div class="option-box">
+            <span class="option-title">[2안] 真川味2店 (진천미별관) (예약완료✓)</span>
+            <a href="https://maps.app.goo.gl/rHwtkHKAx9JbgA176" target="_blank" class="btn-map">구글맵 보기</a>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">18:50</span>
+          <div class="activity">🌃 랴오허제 야시장 (饒河街觀光夜市)</div>
+          <div class="desc">후추빵, 갈비탕, 소시지, 지파이 등 먹거리 투어</div>
+          <a href="https://maps.app.goo.gl/Lh6aG6dRJK68MAbG9" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">20:10</span>
+          <div class="activity">🏔️ 상산(象山) 이동 &amp; 101타워 야경</div>
+          <div class="desc">
+            • <strong>참고사항:</strong> 컨디션에 따라 일정 제외 여지 있음<br>
+            • <strong>꿀팁:</strong> 30분 등산코스 대신 <strong>北星寶宮</strong>까지 택시 타고 올라가면
+            <strong>7분만 등산</strong>하면 됨!
+          </div>
+          <a href="https://maps.app.goo.gl/RMXSSq6L7whdVSvH9" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">21:30</span>
+          <div class="activity">🛒 까르푸 꾸이린점 (家樂福 桂林店)</div>
+          <div class="desc">쇼핑 타임 (💡 까르푸는 24시간 운영)</div>
+          <a href="https://maps.app.goo.gl/RZCByhw3chFtbPCF6" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="card">
+        <h2>📅 3월 15일 (일) - 귀국의 날</h2>
+
+        <div class="timeline-item">
+          <span class="time">08:30</span>
+          <div class="activity">🎒 台鐵台北車站行李託運中心 (짐보관)</div>
+          <div class="desc">
+            • 타이페이역 근처 짐보관 장소<br>
+            • 💰 <strong>추가 비용 발생 시:</strong> 1개당 약 80-100 NTD (대형), 50-80 NTD (중형/소형)
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">09:00</span>
+          <div class="activity">🏛️ 중정기념당(中正紀念堂) 방문</div>
+          <a href="https://maps.app.goo.gl/rttpZ3YfKrD8uBs18" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">10:30</span>
+          <div class="activity">🥟 鼎泰豐 新生店 (딘타이펑 신성점)</div>
+          <div class="desc">
+            <strong>💡 팁:</strong> 오픈시간이라 대기시간이 짧음<br>
+            • <strong>대기가 많을 경우:</strong> 대기표 받고 누가크래커 먼저 구매<br>
+            • <strong>대기가 적을 경우:</strong> 식사 먼저 하고 누가크래커 구매
+          </div>
+          <a href="https://maps.app.goo.gl/PEbYkjca5j8npZiE9" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">11:30</span>
+          <div class="activity">🍪 甜滿 (라뜰리에 루터스) - 누가크래커</div>
+          <a href="https://maps.app.goo.gl/DdJdzj4KfqejJQ2b6" target="_blank" class="btn-map">구글맵 보기</a>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">12:15</span>
+          <div class="activity">🚇 타이페이역 도착 / MRT Express 탑승</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">13:15</span>
+          <div class="activity">🛬 타오위안 공항(T2) 도착</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">15:15</span>
+          <div class="activity">🛫 BR160 탑승</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="time">18:45</span>
+          <div class="activity">🏠 인천공항(T1) 도착 및 해산</div>
+        </div>
+      </div>
+
+      <!-- Reference List -->
+      <div class="card ref-section">
+        <h2>📋 참고 리스트</h2>
+
+        <h3>🍽️ 식당 리스트</h3>
+        <ul class="ref-list">
+          <li><a href="https://maps.app.goo.gl/T681k255XNrqMYye9" target="_blank">동일배골총점 (시먼)</a></li>
+          <li><a href="https://maps.app.goo.gl/PEbYkjca5j8npZiE9" target="_blank">딘타이펑 (鼎泰豐)</a></li>
+          <li><a href="https://maps.app.goo.gl/qTALV3P4x34nAffw5" target="_blank">근래철판구이 (한국인 인기)</a></li>
+          <li><span>Karen 철판구이 (잠실 롯데백 입점)</span></li>
+          <li><a href="https://maps.app.goo.gl/VsJY8s8dfy7Kk4kW9" target="_blank">God Guo Hot Pot</a></li>
+          <li><a href="https://maps.app.goo.gl/S9yiL1dXkNPyoVys7" target="_blank">高記 信義小館 (딘타이펑 대체)</a></li>
+          <li><a href="https://maps.app.goo.gl/U2B5qdssmBcak2N59" target="_blank">KiKi餐廳 (예약완료)</a></li>
+          <li><a href="https://maps.app.goo.gl/rHwtkHKAx9JbgA176" target="_blank">진천미별관 (예약완료)</a></li>
+        </ul>
+
+        <h3>🍍 펑리수 / 누가크래커 / 선물</h3>
+        <ul class="ref-list">
+          <li><a href="https://maps.app.goo.gl/PVKuiRSeDPtVWehr6" target="_blank">써니힐 (微熱山丘) - 펑리수</a></li>
+          <li><a href="https://maps.app.goo.gl/mkfJyzAR9fWZzYGVA" target="_blank">치아더 (佳德) - 펑리수</a></li>
+          <li>
+            <a href="https://maps.app.goo.gl/DdJdzj4KfqejJQ2b6" target="_blank">라뜰리에 루터스 (甜滿) - 누가크래커</a>
+          </li>
+          <li>
+            <a href="https://maps.app.goo.gl/4srpa92fQxuqGhsa8" target="_blank">천인명차 (天仁茗茶) - 찻잎, 티백</a>
+          </li>
+        </ul>
+
+        <h3>🛒 마트 / 조식 / 야시장</h3>
+        <ul class="ref-list">
+          <li><a href="https://maps.app.goo.gl/1KbD8nNB4uA8GSr3A" target="_blank">전련복리중심 (체인마트)</a></li>
+          <li><a href="https://maps.app.goo.gl/RZCByhw3chFtbPCF6" target="_blank">까르푸 꾸이린점</a></li>
+          <li><a href="https://maps.app.goo.gl/9ocuvkbjmXLndHdK9" target="_blank">麥香堡早餐店</a></li>
+          <li><a href="https://maps.app.goo.gl/kELnFj9zqFx94X5A8" target="_blank">What Day Kitchen (花嘴廚房)</a></li>
+          <li>
+            <a href="https://maps.app.goo.gl/Lh6aG6dRJK68MAbG9" target="_blank">라오허제 야시장 (饒河街觀光夜市)</a>
+          </li>
+        </ul>
+
+        <h3>🧋 커피 / 음료 / 빙수</h3>
+        <ul class="ref-list">
+          <li><a href="https://maps.app.goo.gl/2jaHzFdC9FhD1z166" target="_blank">행복당 (幸福堂)</a></li>
+          <li><a href="https://maps.app.goo.gl/QEtgtKYcgfk1dH2Z9" target="_blank">우스란 (50嵐)</a></li>
+          <li><a href="https://maps.app.goo.gl/GWC6Uhq4Bxa5QpKy6" target="_blank">Comebuy</a></li>
+          <li><a href="https://maps.app.goo.gl/uW73o4PL9Wm12MLz6" target="_blank">스무시하우스</a></li>
+        </ul>
+      </div>
+
+      <div class="tips">
+        <h3>💡 여행 꿀팁</h3>
+        <p>💳 <strong>이지카드:</strong> MRT, 버스, 편의점, 택시(일부) 등에서 만능으로 사용 가능합니다.</p>
+        <p>
+          🚂 <strong>스펀 기차:</strong> 배차 간격이 약 1시간입니다. 핑시선 시간표를 미리 꼭 확인하세요. 복귀 시 기차
+          시간표 감안하여 핑시선 또는 택시 이용!
+        </p>
+        <p>
+          🏔️ <strong>상산 야경:</strong> 해질녘(18:30~19:30)에 올라가면 매직아워와 야경을 동시에 즐길 수 있습니다.
+          컨디션에 따라 <strong>北星寶宮까지 택시</strong>로 가면 등산 7분만으로 정상 도달!
+        </p>
+        <p>🏪 <strong>까르푸 꾸이린점:</strong> 24시간 운영으로 일정 마지막에 들르기 좋습니다.</p>
+        <p>
+          🎒 <strong>짐보관:</strong> 타이페이역 근처 짐보관소 이용 시 추가 비용 발생 (대형 80-100 NTD, 중소형 50-80
+          NTD)
+        </p>
+        <p>
+          🥟 <strong>딘타이펑 신성점:</strong> 오픈시간(10:30) 방문 시 대기 짧음. 대기 상황에 따라 누가크래커 구매 순서
+          조정!
+        </p>
+        <p>🍽️ <strong>점심/저녁 옵션:</strong> 3/14(토) 점심에 선택한 옵션(1안 or 2안)에 따라 저녁도 동일 옵션 이용!</p>
+      </div>
+    </div>
+  
+
+</body></html>
